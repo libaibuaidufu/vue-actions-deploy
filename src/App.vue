@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div  class="markdown-body">
+     <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import "highlight.js/styles/github.css";
+import "github-markdown-css";
+import VueMarkdown from 'vue-markdown';
+import Good from "./docs/xx.md";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    VueMarkdown
+  },
+  data() {
+    return {
+      mdData: Good
+    }
+  },
 }
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
